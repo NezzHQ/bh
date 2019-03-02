@@ -1,0 +1,44 @@
+body {
+    background-color:aqua;
+}
+
+header{
+    position: relative;    
+}
+
+nav{
+    position:absolute;
+    top:0; 
+    right:0;
+}
+
+#nobullets{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:inline;
+}
+
+#nobullets li{
+    display: inline;
+    
+}
+
+
+
+h1{
+    color:black;
+}
+
+#gohead{
+    border: 1px solid powderblue;
+  margin: 50px 
+}
+
+#skills{
+    background-color: white
+     border: 1px solid powderblue;
+  margin: 50px    
+}
+
+
