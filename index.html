@@ -6,28 +6,71 @@
         <meta name="Description" content="Bens Hilaire Porfolio">
         <link rel="stylesheet" href="assets/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>   
+    </head>
+    
 <body>
-    <header >
-        <h1>Bens Hilaire</h1>
+    <header>
+        <img src="assets/img/bens_logo.png">
        
            <nav>
         <ul id="nobullets" type="circle">
             <li><a href="index.html">Home</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://www.linkedin.com/in/benshilaire" target="_blank"><i class="fa fa-linkedin-square" style="font-size:26px"></i></a></li>
+            <!--<li><a href="https://www.linkedin.com/in/benshilaire" target="_blank"><i class="fa fa-linkedin-square" style="font-size:26px"></i></a></li>-->
         </ul>
             </nav>
     </header>
+    <!--Slide Show Container -->
+    <div class="slideshow-container">
+        <div class="slides">
+            <div class="number">1 /3</div>
+            <div><img src="assets/img/red_bens.jpg"></div>
+            <!--<div class="text">The DreadHead in Tech</div>-->
+        </div>
+        
+        <!-- Hide picture.
+        <div  class="slides">
+            <div class="number">2 /4</div>
+            <div><img src="assets/img/reve_bens.jpg"></div>
+            <div class="text">Caption 2</div>
+        </div>
+        -->
+        <div class="slides">
+            <div class="number">2 /3</div>
+            <div><img src="assets/img/startupEmbassy.jpg"></div>
+            <!--<div class="text">Caption 3</div>-->
+        </div>
+        
+        <div class="slides">
+            <div class="number">3 /3</div>
+            <div><img src="assets/img/fromthemud.jpg"></div>
+            <!--<div class="text">Caption 4</div>-->
+        </div>
+        
+        <a class="prev" onclick="plusIndex(-1)">&#10094;</a>
+        <a class="next" onclick="plusIndex(+1)">&#10095;</a>
+        
     
-    <div id="gohead">
-    <h1>Welcome To Bens Hilaire Portfolio</h1>
-    <p>Bens Hilaire, also known as "The DreadHead in Tech" is on a journey to become a great web developer. Prior to becoming a web developer, Bens is a product manager at the Neighborhood Start Fund.</p>
+    <!-- Hide the dots button below.
+    </div>
+    <br/>
+    <div style="text-align: center;">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <!--<span class="dots" onclick="currentSlide(2)"></span>-->
+        <!--<span class="dots" onclick="currentSlide(3)"></span>-->
+        <!--<span class="dots" onclick="currentSlide(4)"></span>
+  
+    </div>
+    -->
+  
+    <div class="gohead">
+    <h1 class="firstTitle">Welcome To Bens Hilaire Portfolio</h1>
+    <p>Bens Hilaire, also known as "The DreadHead in Tech" is on a journey to become a great web developer.</p>
     </div>
     
     <div id="skills">
-        <h1>Key Skills</h1>
-        <ul>
+        <h2 id="ks">Key Skills</h2>
+        <ul class="nobull">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
@@ -35,22 +78,60 @@
         <li>MySQL</li>
         <li>Product Management</li>
         </ul>
-    
-    
-    
+        
     
     </div>
     
 
     
-    
+    <!-- I wanted to add an image slideshow to my homepage but I discovered I had to use JavaScript to do it. I searched and did the best I could with the lack of knowledge I have in JavaScript to create the image slide show idead I had in mind.-->
 
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showImage(slideIndex);
+        function plusIndex(n){
+            showImage(slideIndex += n);
+        }
+        
+        
+        function currentSlide(n){
+            showImage(slideIndex = n);
+        }
+        
+        function showImage(n){
+        var slide = document.getElementsByClassName("slides");
+        /*var dots = document.getElementsByClassName("dots");*/
+        
+        if (n > slide.length) {slideIndex =1};
+        if (n < 1) { slideIndex = slide.length};
+        
+        for (var i = 0; i < slide.length; i++) {
+            slide[i].style.display ="none";
+        };
+        
+        
+        slide[slideIndex-1].style.display = "block";
+        
+            /*for (var i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", "");
+            };*/
+            
+        //dots[slideIndex-1].className +="active";
+        
+        };
+            
+        
     
     
     
     
+    </script>
     
     
     
+    
+    <!-- I Can't get JavaScript to work externally, so for now I'll add these JS syntax internally.
+    <script src="scripts/main.js"></script>
+    -->
     </body>
 </html>
